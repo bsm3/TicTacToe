@@ -99,8 +99,17 @@ int main(void)
 
 		do
 		{
-			printf("Player %d, enter a number %c: ", player, (player ==1)? 'X' : 'O');
-			scanf("%d", &go);
+			if(player == 1)
+			{
+				printf("Player %d, enter a number %c:\n", player, (player ==1)? 'X' : 'O');
+				go = rand() % 9 + 1;
+				sleep(1);
+			}
+			else
+			{
+				printf("Player %d, enter a number %c: ", player, (player ==1)? 'X' : 'O');
+				scanf("%d", &go);
+			}
 			go--;
 			row = go / 3;
 			col = go % 3;
